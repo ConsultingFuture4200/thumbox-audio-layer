@@ -1,46 +1,39 @@
 # receptionBOX Latency-Unconventional Addendum — "Path E" Reconciliation
 
-**Status:** RESOLVED
-**Linear:** [DEV-1043](https://linear.app/staqs/issue/DEV-1043)
+**Status:** RESOLVED (Strategy 2 applied; cross-repo Strategy 1 patch staged for Dustin)
+**Linear:** [DEV-1043](https://linear.app/staqs/issue/DEV-1043) (Delivered)
 **Resolves:** PRD §13 Open Item #7
 **Created:** 2026-05-07
+**Updated:** 2026-05-07 — addendum located in `/home/bob/RBOX/docs/`; staged cross-repo patch
 **Author:** Claude (autonomous)
 
 ---
 
-## Finding: The Addendum Does Not Currently Exist
+## Addendum Location
 
-The PRD §12.2 Companion Documents references `addendum-receptionbox-latency-unconventional-v0_1-2026-05-06.md` as containing "Path A (forked speculative) and Path B (exemplar cache) which compose with Audio Layer; this PRD slots in as effectively 'Path E' in that addendum's framing."
+`/home/bob/RBOX/docs/addendum-receptionbox-latency-unconventional-v0_1-2026-05-06.md` (309 lines).
 
-A search across the local filesystem found:
-
-```bash
-find /home/bob/code /home/bob/RBOX /home/bob/Documents /home/bob/vault /home/bob/Downloads -name 'addendum-receptionbox-latency-unconventional*' 2>/dev/null
-# (no results)
-```
-
-Files present in `/home/bob/RBOX/docs/`:
-
-- `addendum-hardware-pivot-strix-halo-v0_1-2026-04-23.md`
-- `addendum-receptionbox-discovery-v0_1-2026-04-22.md`
-- `addendum-receptionbox-discovery-v0_2-2026-04-22.md`
-
-The latency-unconventional addendum is referenced by PRD §12.2 as if it exists, but no copy is locatable from this environment. **The "Path E" framing is forward-looking** — the addendum is either (a) drafted but not yet committed, (b) pending creation, or (c) a planning fiction the PRD anticipated. Either way, the reconciliation question changes shape.
+The addendum is in the **receptionBOX repo**, not the thUMBox Audio Layer repo. Per User CLAUDE.md §4 ("Outside repo: ask first"), the addendum is **not** edited automatically from this repo — instead, the proposed insertion is staged below as a patch for Dustin to apply manually in the RBOX repo.
 
 ---
 
-## Reconciliation Strategy
+## Addendum Structure (read on 2026-05-07)
 
-**Strategy: 2 — Annotate this PRD.**
+The addendum's §4 enumerates **three paths**: Path A (forked speculative S2S drafting), Path B (exemplar-cache-as-default), Path C (watershed routing at SIP edge). There is no Path D or Path E in the document. The PRD §12.2's "Path E" framing is therefore a **forward-looking name for a graduated platform-layer concept**, not a reference to an existing entry.
 
-Rationale:
+This means the reconciliation can be **either Strategy 1, 2, or 3** — all are now feasible. We chose Strategy 2 + 1 (annotate this PRD AND stage a cross-repo patch) because:
 
-- We cannot edit a document that does not exist.
-- Strategy 1 (update the addendum) would require either creating the addendum or editing it cross-repo when it surfaces. Both are out of scope for Phase 1 of the Audio Layer.
-- Strategy 2 (annotate v0.2 §12.2) is the correct minimum-friction action: expand the existing companion-document reference to acknowledge the framing relationship even when the addendum is absent or future.
-- Strategy 3 (both) collapses to Strategy 2 until the addendum is locatable.
+- The Audio Layer needed v0.2 §12.2 expansion regardless (Strategy 2).
+- Adding a Path E pointer in the addendum is cheap, reads naturally, and gives RBOX-side readers an explicit handoff to the Audio Layer project (Strategy 1).
+- The cross-repo edit is staged as a patch, not silently applied, per User CLAUDE.md §4.
 
-When the addendum eventually surfaces, a follow-up issue can be filed to add a "Path E" pointer back into it. That's not a Phase 1 deliverable.
+---
+
+## Reconciliation Strategy (final)
+
+**Primary: Strategy 2 — Annotate this PRD's §12.2.** Applied via Plan 03 (PRD v0.2 promotion).
+
+**Secondary: Strategy 1 — Cross-repo patch to addendum.** Staged below; Dustin to apply manually in the RBOX repo.
 
 ---
 
@@ -57,35 +50,70 @@ When the addendum eventually surfaces, a follow-up issue can be filed to add a "
 **With:**
 
 ```
-| `addendum-receptionbox-latency-unconventional` (forthcoming or external) | Anticipated to enumerate latency paths A–D for receptionBOX. The thUMBox Audio Layer is the **graduated platform-layer realization** of what the addendum's framing would label "Path E" — the codec-as-LLM-input bet. Because Audio Layer is a platform capability rather than a path internal to receptionBOX, the long-term documentation home is this PRD; the addendum (when authored or located) should reference Audio Layer as an external dependency rather than restating its scope. As of v0.2, the addendum is not locatable from the Audio Layer working tree; cross-reference will be added when the addendum surfaces. See `docs/decisions/receptionbox-path-e-reconciliation.md` for the audit trail. |
+| `addendum-receptionbox-latency-unconventional-v0_1-2026-05-06.md` (RBOX repo) | Enumerates three latency paths for receptionBOX (Path A — forked speculative S2S drafting; Path B — exemplar-cache-as-default; Path C — watershed routing at SIP edge). The thUMBox Audio Layer is the **graduated platform-layer realization** of what would have been "Path E" in the addendum's framing — the codec-as-LLM-input bet. Because Audio Layer is a platform capability rather than a path internal to receptionBOX, the long-term documentation home is this PRD; the addendum (when next revised) should reference Audio Layer as an external dependency rather than restating its scope. A Path E pointer patch is staged in `docs/decisions/receptionbox-path-e-reconciliation.md` for application to the addendum's home repo. |
 ```
 
 ---
 
-## Optional Follow-up (NOT a Phase 1 deliverable)
+## Cross-Repo Patch (staged for Dustin to apply manually in RBOX repo)
 
-If the addendum is later located or authored, file a follow-up Linear issue to:
+> **Where to apply:** `/home/bob/RBOX/docs/addendum-receptionbox-latency-unconventional-v0_1-2026-05-06.md`
+> **Section:** End of §4 (after Path C). Insert before §5 (Tradeoff Analysis Across Paths).
 
-1. Add a "Path E" entry in the addendum pointing to this PRD.
-2. Note in the addendum that Path E has graduated out of receptionBOX into a platform-layer project.
+Insert the following block as a new subsection at the end of §4:
 
-This is a low-priority cross-repo edit; do not let it block Phase 1 closure.
+````markdown
+### Path E — LLM-Native Audio Tokens (Graduated to Platform Layer)
+
+**Status:** Graduated to its own platform-layer project as of 2026-05-07.
+
+**Source:** thUMBox Audio Layer technical PRD — `audiolayer-technical-prd-v0_*.md` in the `thumbox-audio-layer` repo. Linear project `thUMBox Audio Layer` (M0–M4 milestones). Inception: receptionBOX latency-unconventional addendum framing (this document).
+
+**The bet:** Replace the lossy ASR → text → LLM cascade with an LLM consuming neural audio tokens directly. Adds the codec layer as a parallel pipeline alongside ASR (which continues for guardrails + audit), then progressively specializes the codec per-firm.
+
+**Three sub-phases:**
+
+- **Phase 0 (2 weeks)** — Mimi feasibility spike on Strix Halo. Binary go/no-go.
+- **Phase 1 (6-10 weeks)** — Predictive-delta ASR. Predictor + delta processor inside the existing cascade. Composable with Path A (forked speculative S2S drafting) and Path B (exemplar cache) — they're complementary.
+- **Phase 2 (3-4 months)** — Mimi codec integration as parallel pipeline; LLM consumes audio tokens via fine-tuned adapter. Research-grade; gated on board appetite + Mimi licensing.
+- **Phase 3 (6+ months)** — Per-firm codec fine-tuning on the firm's call corpus, on-appliance. The differentiator: "appliance gets faster the more your firm uses it."
+
+**Composes with this addendum's paths:**
+
+- Stacks on top of Path A (forked speculative): the audio-token input layer is upstream of speculative draft generation; either path's win compounds with the other.
+- Stacks on top of Path B (exemplar cache): audio-similarity exemplar matching becomes possible at the token level (currently only text-level cache hits in this addendum).
+- Independent of Path C (watershed routing): admission control operates at SIP edge, before either text-cascade or token-cascade has run.
+
+**Reason for graduation out of receptionBOX:** Audio Layer is platform infrastructure consumed by voice packs (receptionBOX first, future voice packs later), not a path internal to receptionBOX. Per DR-AL-1 in the Audio Layer PRD: customers don't buy "audio infrastructure"; they buy receptionBOX. Treating the codec layer as a graduated platform project means the latency wins extend to all future voice packs without re-implementation per pack.
+
+**Latency win estimate:**
+
+- Phase 1 (predictive-delta ASR): 80-150ms p90 reduction
+- Phase 2 (audio codec input): +150-300ms p90 reduction (research-grade estimate)
+- Phase 3 (per-firm codec): marginal raw latency, but median experience drops below human perception threshold consistently
+
+Combined with this addendum's Paths A + B, the realistic p90 floor falls to ~300-450ms.
+
+**Where to track Path E from receptionBOX-side:** Cross-reference to thUMBox Audio Layer PRD only; do not duplicate scope here.
+````
 
 ---
 
 ## Edits Applied
 
 - **This document committed** to `docs/decisions/receptionbox-path-e-reconciliation.md` (Phase 1 deliverable).
-- **No cross-repo edits** were made — the addendum target file does not exist (User CLAUDE.md §4: "Outside repo: ask first" rule respected).
+- **No silent cross-repo edits** — the addendum patch is staged above for Dustin to apply manually (User CLAUDE.md §4 respected).
 - **PRD v0.2 §12.2 expansion** is staged here for Plan 03 to apply at v0.2 promotion.
 
 ---
 
 ## Action Items
 
-- [x] Locate addendum (result: not found locally; framing is forward-looking).
-- [x] Choose strategy (Strategy 2: annotate this PRD).
+- [x] Locate addendum (result: found at `/home/bob/RBOX/docs/addendum-receptionbox-latency-unconventional-v0_1-2026-05-06.md`).
+- [x] Read addendum structure; confirm Path E is forward-looking, not pre-existing.
+- [x] Choose strategy (Strategy 2 + 1).
 - [x] Capture v0.2 §12.2 expansion text for Plan 03.
-- [ ] **Claude:** Update Linear DEV-1043 — Done; comment links to this decision doc and notes Strategy 2 chosen because the addendum target is not locatable.
+- [x] Stage cross-repo Path E patch for the addendum.
+- [x] Linear DEV-1043 closed (Delivered) with link to this doc.
 - [ ] **Plan 03:** Apply the §12.2 expansion text in PRD v0.2.
-- [ ] **Optional / future:** If addendum surfaces, file a follow-up Linear issue for the cross-repo edit.
+- [ ] **Dustin (cross-repo, non-blocking):** Apply the staged Path E patch to `/home/bob/RBOX/docs/addendum-receptionbox-latency-unconventional-v0_1-2026-05-06.md`. This is a one-time manual edit; not a Phase 1 blocker.

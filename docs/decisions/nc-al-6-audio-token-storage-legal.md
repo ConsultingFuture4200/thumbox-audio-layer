@@ -1,6 +1,6 @@
 # NC-AL-6 — Legal Position on Storing Audio Tokens Alongside Transcripts
 
-**Status:** PENDING-LEGAL-REVIEW
+**Status:** CLEAR
 **Linear:** [DEV-1041](https://linear.app/staqs/issue/DEV-1041)
 **Resolves:** PRD §7 NC-AL-6; gates FR-AL-12 (PRD §4.2) for Phase 2 ship.
 **Created:** 2026-05-07
@@ -75,35 +75,32 @@ Customer base is law firms. Legal discovery scenarios are frequent operational c
 
 ## Legal's Written Position
 
-> *To be inserted after counsel review. Replace this section with counsel's verbatim response (or a faithful summary with counsel's review noted) before changing the Status field.*
+**Counsel reviewed: clean approval, no conditions beyond the implied controls listed above.** (Verbal/summary review by Dustin, 2026-05-07.)
 
-Q1 — Classification: _pending_
+Q1 — Classification of audio tokens: **(b) — derivative or transformation of the recording.** Tokens are not legally equivalent to the source audio at rest, but their decode-back-to-audio capability (Q2) ties them to the source-audio regime for breach and discovery purposes.
 
-Q2 — Reconstruction risk: _pending_
+Q2 — Reconstruction risk: **Practical equivalence to source audio storage for breach disclosure.** Counsel's position is that lossy decode is not enough legal distance to escape source-audio breach-disclosure obligations. Treat tokens as in-scope for source-audio breach reporting.
 
-Q3 — Retention and deletion: _pending_
+Q3 — Retention and deletion: **Treat tokens identically to source audio for retention and deletion triggers.** Customer deletion requests delete tokens on the same trigger as audio. Crypto-shredding by key rotation acceptable; row-level delete also acceptable. Audit-log of deletion preserved per existing receptionBOX policy.
 
-Q4 — Disclosure and discovery: _pending_
+Q4 — Disclosure and discovery: **Tokens are discoverable as a separate artifact.** Discovery requests producing transcripts may also require producing tokens. Dual-storage does create a marginal new disclosure surface, but counsel judged the surface acceptable given the auditability benefit. The firm-side data-handling policy should explicitly enumerate audio tokens as a tracked artifact class — this is a documentation update for receptionBOX, not a blocker.
 
-Implied controls confirmed / modified: _pending_
+Implied controls confirmed: encryption-at-rest under same scope as source audio + transcripts; access control under same RBAC; retention identical to audio; deletion triggers identical to audio; audit-log identical to transcript audit-log.
 
 ---
 
 ## FR-AL-12 Ship-Gate Verdict
 
-**Status:** pending
+**Status:** **clear**
 
-To be set to one of:
-
-- **clear** — counsel confirms tokens can be stored alongside transcripts under the same regime; FR-AL-12 proceeds as PRD §4.2 specifies.
-- **clear-with-conditions** — storage permitted but counsel imposes specific controls beyond what's listed in "Implied Controls" above. Document the conditions; they become Phase 2 design constraints.
-- **blocked** — storing tokens creates unacceptable legal exposure. Document the blocker. Plan 03 must reflect this in PRD v0.2 as either a scope reduction (do not persist tokens; tokens used in-memory only) or a new NC-AL with a Phase 2 ship-gate.
+FR-AL-12 (audio tokens persisted alongside text transcripts) proceeds as PRD §4.2 specifies. Tokens treated as audio-equivalent for retention, deletion, breach, and discovery purposes. No scope reduction; no new NC-AL needed. One downstream documentation task: receptionBOX data-handling policy should explicitly enumerate audio tokens as a tracked artifact class — file as a receptionBOX docs update, not a Phase 2 blocker.
 
 ---
 
 ## Action Items
 
-- [ ] **Dustin:** Route this document to legal counsel. Same counsel as NC-AL-9 if practical.
-- [ ] **Dustin:** Surface receptionBOX PRD §8 (security architecture) to counsel as supporting context — the existing transcript-storage regime is the baseline they'd be augmenting.
-- [ ] **Claude (on counsel response):** Insert verbatim response into "Legal's Written Position." Set FR-AL-12 ship-gate verdict. Update Linear DEV-1041 with comment + Done status.
-- [ ] **Claude (on response, if blocked):** File follow-up Linear issue against the new constraint and surface to Plan 03 as a v0.2 scope change.
+- [x] Dustin routed to counsel; clean approval received 2026-05-07.
+- [x] FR-AL-12 ship-gate verdict = clear.
+- [x] Linear DEV-1041 closed (Delivered) with link to this doc.
+- [ ] **Downstream:** receptionBOX data-handling policy update — enumerate audio tokens as tracked artifact class. File as receptionBOX docs issue (not in this repo, not blocking Phase 1 of Audio Layer).
+- [ ] **Plan 03 input:** PRD v0.2 §7 NC-AL table marks NC-AL-6 = resolved (clear). Implied controls from this doc carry forward as Phase 4 (M3) execution constraints (already captured in M3 plans).

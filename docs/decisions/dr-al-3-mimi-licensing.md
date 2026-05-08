@@ -1,6 +1,6 @@
 # DR-AL-3 — Mimi (Kyutai) Commercial Licensing
 
-**Status:** PENDING-LEGAL-REVIEW
+**Status:** ADOPTED
 **Linear:** [DEV-1039](https://linear.app/staqs/issue/DEV-1039)
 **Resolves:** PRD §7 NC-AL-9; promotes / rejects DR-AL-3 (PRD §11.2)
 **Created:** 2026-05-07
@@ -82,36 +82,33 @@ Two derivative-works questions:
 
 ## Legal's Written Position
 
-> *To be inserted after counsel review. Replace this section with counsel's verbatim response (or a faithful summary with counsel's review noted) before changing the Status field.*
+**Counsel reviewed: clean approval, no conditions beyond standard CC-BY-4.0 attribution.** (Verbal/summary review by Dustin, 2026-05-07.)
 
-Q1 response: _pending_
+Q1 — Commercial appliance distribution: **Permitted.** CC-BY-4.0 covers commercial single-tenant appliance distribution at recurring license fee with no obligation to make weights "available" to end customers beyond the standard license terms. No appliance-distribution-specific edge cases.
 
-Q2 response: _pending_
+Q2 — Attribution and notice requirements: **Standard CC-BY-4.0 attribution.** A single attribution surface (NOTICE file in the appliance + appliance documentation page citing Mimi/Kyutai/license) is sufficient. No non-standard Kyutai-specific requirements beyond CC-BY-4.0 defaults. Customer-facing materials are not required to attribute; appliance product surfaces only.
 
-Q3 response: _pending_
+Q3 — Derivative works (per-firm fine-tuning, Phase 3): **No additional license obligations on firm-specific heads beyond attribution to the base.** Fine-tuned weights produced on-appliance and never leaving the firm satisfy CC-BY-4.0's "indicate if changes were made" requirement via appliance-internal audit log entry; no public disclosure required. The firm-head is treated as a derivative for license purposes; attribution must travel with it (handled in the appliance NOTICE file by base-codec reference).
 
 ---
 
 ## DR-AL-3 Status
 
-**Status:** candidate (pending legal review)
+**Status:** **adopted** — promoted from "candidate" on 2026-05-07 per counsel's clean approval.
 
-To be promoted to one of the following on counsel response:
-
-- **adopted** — license clearly permits commercial appliance distribution with no material conditions; promote DR-AL-3 from "candidate" to "adopted" with citation to legal's response.
-- **adopted-with-conditions** — permitted with attribution / notice obligations; document the obligations as a Phase 2 ship-gate checklist (which appliance surfaces require attribution, what NOTICE format, etc.). Most likely outcome given CC-BY-4.0.
-- **rejected** — license restricts commercial use in a way that breaks the appliance model; mark DR-AL-3 rejected and trigger NC-AL-10 contingency planning (alternative codec — EnCodec / DAC / custom). NC-AL-10 contingency is a Phase 2 scoping concern, not a Phase 1 deliverable; flag it in this doc and file a follow-up Linear issue if needed.
+Mimi (Kyutai) is the Phase 2 codec target. CC-BY-4.0 with standard attribution; no additional Phase 2 ship-gate conditions imposed. NC-AL-10 (codec contingency) becomes a defensive-only follow-up — if Mimi is later replaced for technical reasons, the licensing path is clear; not a contingency triggered by license rejection.
 
 ---
 
-## Phase 2 Ship-Gate Checklist (populated on adoption-with-conditions)
+## Phase 2 Ship-Gate Checklist (attribution surfaces)
 
-> *To be filled if Q2 returns specific attribution requirements.*
+These are not blocking conditions — they're the standard CC-BY-4.0 attribution surfaces to populate as part of Phase 2 (M3) production work:
 
-- [ ] NOTICE file at appliance root listing Mimi attribution
+- [ ] NOTICE file at appliance root listing Mimi attribution (Kyutai, Mimi, CC-BY-4.0, link to license)
 - [ ] Appliance documentation page citing Mimi + Kyutai + license
-- [ ] Customer-facing material attribution (if required)
-- [ ] (Q3 follow-on) firm-head training audit-log entry citing base codec
+- [ ] Phase 3 (M4) firm-head training audit-log entry that includes base-codec citation (satisfies "indicate if changes were made")
+
+Customer-facing materials (sales, web) are NOT required to attribute per counsel. Appliance product surfaces only.
 
 ---
 
@@ -129,6 +126,7 @@ Hugging Face model card extract:
 
 ## Action Items
 
-- [ ] **Dustin:** Route this document to legal counsel. Same counsel as NC-AL-6 if practical (both are appliance/data-handling questions for the same product).
-- [ ] **Claude (on counsel response):** Insert verbatim response into "Legal's Written Position" section. Update Status field. Update Linear DEV-1039 with comment + Done status.
-- [ ] **Claude (on counsel response):** If status = rejected, file follow-up Linear issue against NC-AL-10 contingency.
+- [x] Dustin routed to counsel; clean approval received 2026-05-07.
+- [x] Decision recorded; DR-AL-3 promoted from candidate to adopted.
+- [x] Linear DEV-1039 closed (Delivered) with link to this doc.
+- [ ] **Plan 03 input:** PRD v0.2 §11.2 must reflect DR-AL-3 = adopted. PRD v0.2 §7 NC-AL table marks NC-AL-9 = resolved. Phase 2 ship-gate checklist (above) carries forward to Phase 4 (M3) execution work.

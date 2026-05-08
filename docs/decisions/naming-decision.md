@@ -1,6 +1,6 @@
 # Project Naming Decision
 
-**Status:** PENDING-DUSTIN-CONFIRMATION
+**Status:** KEPT
 **Linear:** [DEV-1038](https://linear.app/staqs/issue/DEV-1038), [DEV-1037](https://linear.app/staqs/issue/DEV-1037) (informational)
 **Resolves:** PRD §1.4, §13 Open Item #1
 **Created:** 2026-05-07
@@ -35,13 +35,13 @@ Rationale:
 
 ## Decision
 
-> *Pending Dustin's explicit confirmation.*
+**Decision:** **kept** — "thUMBox Audio Layer" finalized as the name.
 
-**Decision:** _pending_ (one of: kept / changed-to-X)
+**Confirmed by:** Dustin
 
-**Confirmed by:** _pending_
+**Date:** 2026-05-07
 
-**Date:** _pending_
+**Propagation required:** None. Linear project name, GitHub repo, GSD planning artifacts, and PRD title already use the kept name.
 
 ---
 

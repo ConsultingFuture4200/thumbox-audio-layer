@@ -1,6 +1,6 @@
 # Partner Firm — 90-Day Call Corpus Path
 
-**Status:** PENDING-FIRM-IDENTIFICATION
+**Status:** PATH-A (agreement landed)
 **Linear:** [DEV-1042](https://linear.app/staqs/issue/DEV-1042)
 **Resolves:** PRD §8.2 Internal Dependencies; gates Phase 1 (Predictive-Delta ASR / GSD Phase 3 = Linear M2).
 **Created:** 2026-05-07
@@ -46,23 +46,21 @@ What the firm gets in exchange:
 
 ---
 
-## Candidate Partner Firm
+## Partner Firm
 
-> *To be filled when Dustin identifies the firm.*
+**Firm name:** [partner firm under signed agreement — details in Heron Labs CRM, not captured in this repo]
 
-**Firm name:** _pending_
+**Primary contact:** [in Heron Labs CRM]
 
-**Primary contact:** _pending_
+**Existing receptionBOX status:** Discovery-phase partner with signed data-sharing agreement landing in Phase 1 calendar window.
 
-**Why this firm:** _pending_ (volume, willingness, fit with discovery-phase pilot framing)
-
-**Existing receptionBOX status:** _pending_ (active pilot / signed but not started / interested but pre-pilot)
+**Why details aren't captured here:** Per Dustin (2026-05-07), partner identity and contact stay in Heron Labs CRM rather than the public Audio Layer repo. The data-sharing agreement and corpus delivery mechanism are tracked operationally; this doc records only that Path A landed and the corpus is on-track for Phase 1 (M2 / GSD Phase 3) consumption.
 
 ---
 
 ## Path Chosen
 
-**Path:** _pending_ (one of A / B / C)
+**Path:** **A** — agreement signed within Phase 1 calendar window. Corpus is available for Phase 1 (GSD Phase 3 / Linear M2) predictor training when that phase begins.
 
 ### Path A — Agreement signed within Phase 1
 
@@ -80,42 +78,36 @@ If no candidate exists, document this as a project-level risk. PRD §13.6 alread
 
 ## Agreement Status
 
-> *Filled per the chosen path.*
+**Path A:** signed data-sharing agreement landed 2026-05-07 (per Dustin). Agreement and operational details tracked in Heron Labs CRM; Audio Layer repo records the landing event and the corpus availability for Phase 1.
 
-- **Path A:** signed agreement attached as Appendix A; legal review noted; effective date recorded.
-- **Path B:** named owner = _pending_; target signature date = _pending_; current blocker = _pending_.
-- **Path C:** Phase 1 blocker is open; surfaced to Plan 03; risk note added to v0.2 §8.2 / §13.
+Effective date: agreement covers Phase 1 development window (estimated 6-10 weeks active corpus use during predictor training).
 
 ---
 
 ## Corpus Delivery Mechanism
 
-> *Filled when path + agreement land.*
+**Transport, storage, encryption, and destruction trigger:** Operational details tracked in Heron Labs CRM and the signed agreement (not captured in this repo). Phase 1 (GSD Phase 3 / Linear M2) execution work will reference the agreement for the operational specifics when the predictor training pipeline is built (DEV-1053).
 
-- **Transport:** _pending_ (e.g., one-time secure cloud drop, on-appliance ingestion at the firm site, etc.)
-- **Storage at Heron Labs / UMB Group side:** _pending_ (path, encryption-at-rest scope, access control)
-- **Destruction trigger:** _pending_ (e.g., "after Phase 1 evaluation document committed and predictor model in production")
+Destruction trigger (per Path A framing): corpus destroyed after Phase 1 evaluation document committed and predictor model in production.
 
 ---
 
 ## Privacy / Retention Constraints
 
-> *Filled when agreement is negotiated. Capture any specific firm-side asks: PII handling, audit-log requirements, sub-processor disclosures, etc.*
-
-_pending_
+Specific firm-side constraints (PII handling, audit-log, sub-processor disclosures) tracked in the signed agreement and Heron Labs CRM. Phase 1 execution work (DEV-1053 predictor training pipeline) must read the agreement before training starts to ensure compliance.
 
 ---
 
 ## Action Items
 
-- [ ] **Dustin:** Survey active receptionBOX discovery-phase partners (per PRD §8.2 — discovery-phase firm partnerships are the dependency path). Identify candidate firm by volume + willingness.
-- [ ] **Dustin:** Choose between corpus-A (audio + transcripts) and corpus-B (transcripts only) framings when initiating partner conversation. Either is acceptable for Phase 1; B is easier to negotiate.
-- [ ] **Dustin:** Engage legal on data-sharing agreement template (counsel may overlap with NC-AL-9 / NC-AL-6 review).
-- [ ] **Claude (when path chosen):** Update Linear DEV-1042 — Done if Path A or B (with named owner + date for B); In Progress with surfaced blocker if Path C. Update this doc's Path Chosen field.
-- [ ] **Plan 03 dependency:** PRD v0.2 §8.2 will reflect the corpus path status; if Path C, also flagged in §13 Open Items as a Phase 1 entry blocker.
+- [x] Dustin identified partner firm and landed signed data-sharing agreement (Path A) 2026-05-07.
+- [x] Linear DEV-1042 closed (Delivered) with link to this doc.
+- [ ] **Plan 03 input:** PRD v0.2 §8.2 Internal Dependencies updated — partner corpus is available for Phase 1; firm details in Heron Labs CRM.
+- [ ] **Plan 03 input:** PRD v0.2 §13 Open Items #6 (Predictor corpus) marked resolved.
+- [ ] **DEV-1053 (Phase 1 predictor training pipeline) prerequisite:** Read the signed agreement before training starts to confirm corpus access and constraints.
 
 ---
 
 ## Appendix A — Signed Agreement
 
-> *To be appended on Path A.* If transcripts-only path was negotiated, include the signed agreement here verbatim (or a stable internal link).
+Agreement and supporting documents stored operationally in Heron Labs CRM. Not committed to this repo for partner-confidentiality reasons. Audio Layer engineering work that needs the agreement (DEV-1053) will read it through the operational channel when Phase 1 starts.

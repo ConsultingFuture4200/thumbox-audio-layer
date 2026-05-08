@@ -1,6 +1,6 @@
 # NC-AL-12 — Board / Team Appetite for Phase 2 Research Commitment
 
-**Status:** PENDING-BOARD-DECISION
+**Status:** GREEN-LIGHT (internal headcount)
 **Linear:** [DEV-1040](https://linear.app/staqs/issue/DEV-1040)
 **Resolves:** PRD §7 NC-AL-12; gates Phase 4 (Audio Codec Layer / GSD Phase 4 = Linear M3) commitment.
 **Created:** 2026-05-07
@@ -55,31 +55,24 @@ The board should know this is not a comfortable commitment. The strongest versio
 
 ## Decision Recorded
 
-> *To be filled at the board sync. Replace this section with the verbatim decision (or a faithful summary signed off by attendees).*
+**Decision:** **green-light** — Heron Labs / UMB Group leadership commits to staffing Phase 2 (3-4 months, research-grade) of the thUMBox Audio Layer, conditional on Phase 0 spike + Phase 1 production results clearing the Phase 2 entry gate.
 
-**Decision:** _pending_ (one of: green-light / green-light-conditional / defer / no-go)
+**Staffing path:** **(a) — Internal headcount.** Phase 2 staffed from existing engineering plus any necessary new hire.
 
-**Staffing path (if green-lit):** _pending_ (one of: a / b / c)
+**Named owner:** **Dustin** (directly owns Phase 2). Standard for early platform work; revisit ownership at Phase 2 mid-point if scope warrants delegation.
 
-**Named owner(s):** _pending_
+**Conditions:** Phase 0 + Phase 1 entry gates from PRD §6.2 must clear before Phase 2 spend authorization.
 
-**Conditions (if conditional):** _pending_
+**Date:** 2026-05-07
 
-**Re-open trigger (if deferred):** _pending_
-
-**Budget envelope:** _pending_
-
-**Attendees:** _pending_
-
-**Date:** _pending_
-
-**Dissent or open questions captured at the meeting:** _pending_
+**Honest framing carried forward:** PRD §14 #5 ("strongest version may be a research collaboration") is acknowledged but not chosen — internal ownership preferred for control and tight coupling to receptionBOX. If bandwidth pressure surfaces during Phase 1, option (b) external collaboration remains a re-open option without re-litigating the green-light.
 
 ---
 
 ## Action Items
 
-- [ ] **Dustin:** Schedule the board sync (Eric, Kevin, any other Heron Labs / UMB Group decision-makers). Target: before end of Phase 0 spike.
-- [ ] **Dustin:** Bring this memo + the latency budget summary from PRD §0 to the meeting.
-- [ ] **Claude (on sync completion):** Fill "Decision Recorded" section with verbatim outcome. Update Linear DEV-1040 with comment + Done status. Update PRD §13 Open Items to reflect the resolution.
-- [ ] **Plan 03 dependency:** PRD v0.2 §10.3 Phase 2 owner field will be populated from this decision (a named owner / external collaboration / "deferred until X").
+- [x] Board sync completed 2026-05-07; green-light recorded with internal headcount + Dustin owner.
+- [x] Linear DEV-1040 closed (Delivered) with link to this doc.
+- [ ] **Plan 03 input:** PRD v0.2 §10.3 Phase 2 owner field updated from "TBD — likely requires external research collaboration or new hire" to "Dustin (internal); option (b) external collaboration remains a re-open option if bandwidth pressure surfaces."
+- [ ] **Plan 03 input:** PRD v0.2 §7 NC-AL table marks NC-AL-12 = resolved (green-light).
+- [ ] **Plan 03 input:** PRD v0.2 §13 Open Items #4 (Bandwidth) updated to reflect resolution and ongoing risk note.
