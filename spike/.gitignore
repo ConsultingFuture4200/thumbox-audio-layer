@@ -1,0 +1,19 @@
+# uv-managed venv
+.venv/
+
+# Sensitive: image digest captured per-pod (not committed)
+configs/.image-digest
+
+# Local benchmark scratch
+bench/results/*.scratch.json
+bench/results/local-*.json
+
+# Audio assets that aren't in the repo
+assets/test-utterances/*.wav
+assets/llm-eval/audio/*.wav
+!assets/test-utterances/README.md
+!assets/llm-eval/audio/.gitkeep
+
+# Reconstruction outputs
+*-recon.wav
+*-tokens.json

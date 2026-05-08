@@ -1,0 +1,33 @@
+# Runtime profiles for the Phase 0 spike harness.
+#
+# `rocm` profile: cloud MI300X (TensorWave / Vultr / RunPod AMD) or local Strix Halo dev unit.
+# `cuda` profile: cloud H100 (RunPod NVIDIA) — fallback path; not the primary derate target.
+# `cpu` profile: smoke testing only; do NOT run latency benchmarks here.
+#
+# PyTorch presents both ROCm and CUDA as `device="cuda"` at the API level; the distinction is
+# captured at install time via the wheel index URL (see provision scripts).
+
+profiles:
+  rocm:
+    device: "cuda"          # ROCm presents as cuda in PyTorch
+    dtype: "float16"
+    batch_size: 1
+    chunk_size_ms: 80       # Mimi works at 12.5 Hz frame rate; 80 ms = 1 frame
+    mimi_sample_rate: 24000 # Mimi native rate; spike resamples 16 kHz inputs
+    runtime_class: "rocm"
+
+  cuda:
+    device: "cuda"
+    dtype: "float16"
+    batch_size: 1
+    chunk_size_ms: 80
+    mimi_sample_rate: 24000
+    runtime_class: "cuda"
+
+  cpu:
+    device: "cpu"
+    dtype: "float32"
+    batch_size: 1
+    chunk_size_ms: 80
+    mimi_sample_rate: 24000
+    runtime_class: "cpu"
