@@ -1,0 +1,61 @@
+# Pinned model revisions — DO NOT edit without re-running benchmarks.
+#
+# All five pins land in Plan 02-01 Task 4 (this file). Plans 02-02 (decode latency
+# + VRAM probe) and 02-04 (LLM-on-tokens stretch) consume this file READ-ONLY to
+# eliminate the parallel-write hazard between Wave-2 plans.
+#
+# SHAs resolved 2026-05-07 against HF Hub `main` branch via huggingface_hub.HfApi.
+
+mimi:
+  repo_id: "kyutai/mimi"
+  revision: "89091b3e466eb6a9d11e537bf26b144f194978f7"
+  expected_sample_rate: 24000
+  expected_codebooks: 8
+  expected_frame_rate_hz: 12.5
+  consumer: "Plan 02-01 Task 4 (encode/decode loop); Plan 02-02 (latency + VRAM); Plan 02-04 (LLM-on-tokens stretch)"
+
+whisper:
+  repo_id: "Systran/faster-distil-whisper-large-v3"
+  revision: "c3058b475261292e64a0412df1d2681c06260fab"
+  quantization: "int8"
+  consumer: "Plan 02-02 Task 2 (VRAM at 4 concurrent — matches RBOX §4.1 production STT)"
+
+qwen3_4b:
+  repo_id: "Qwen/Qwen3-4B"
+  revision: "1cfa9a7208912126459214e8b04321603b3df60c"
+  quantization: "awq-int4"
+  hidden_dim: 2560
+  consumer: "Plan 02-02 Task 2 (VRAM at 4 concurrent — matches PRD §8.1 production LLM); placeholder weights ok if AWQ-Int4 build not needed for VRAM probe"
+
+qwen25_0_5b:
+  repo_id: "Qwen/Qwen2.5-0.5B"
+  revision: "060db6499f32faf8b98477b0a26969ef7d8b9987"
+  expected_hidden_dim: 896
+  vocab_size: 151936
+  consumer: "Plan 02-04 Task 2 (LLM-on-tokens stretch, PRD §10.1)"
+
+kokoro_82m_onnx:
+  repo_id: "onnx-community/Kokoro-82M-v1.0-ONNX"
+  revision: "1939ad2a8e416c0acfeecc08a694d14ef25f2231"
+  consumer: "Plan 02-04 Task 1 (deterministic LLM-eval audio synthesis; Path TTS option)"
+
+runtime_image:
+  # nvcr.io/nvidia/pytorch:25.04-py3 was attempted first but stalled on first pull
+  # (uptime 0s for 30 min on RunPod). Switched to RunPod-native PyTorch image which
+  # is pre-cached on RunPod's registry. Image sha256 digest captured separately in
+  # spike/configs/.image-digest (gitignored — record after first `docker inspect`).
+  image: "runpod/pytorch:2.4.0-py3.11-cuda12.4.1-devel-ubuntu22.04"
+  template_id: "runpod-torch-v240"
+  digest: "sha256:TBD"   # capture from `docker inspect` on the pod or RunPod dashboard
+
+pod:
+  # Phase 0 spike pod (Plan 02-01 Task 2 outcome). NOT a credential — kept here for
+  # reproducibility audit only. Actual SSH key material lives in 1Password vault
+  # 'thUMBox Audio Layer' once pushed.
+  id: "g7wxghi3u6xm4c"
+  gpu: "NVIDIA A100 80GB PCIe"
+  cost_per_hour_usd: 1.39
+  region: "RO"
+  cloud_type: "SECURE"
+  template: "runpod-torch-v240"
+  created: "2026-05-07"
