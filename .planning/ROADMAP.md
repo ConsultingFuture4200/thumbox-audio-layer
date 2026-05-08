@@ -67,6 +67,15 @@ Plans:
 
 **Depends on:** Phase 1 (M0) completing — specifically NC-AL-9, NC-AL-12.
 
+**Plans:** 5 plans
+
+Plans:
+- [ ] 02-01-PLAN.md — Environment + Mimi encode/decode loop spike (DEV-1045, DEV-1046; hardware-path decision; ≤500 LOC)
+- [ ] 02-02-PLAN.md — Decode-latency benchmark + concurrent-VRAM probe with Strix Halo derate (DEV-1048, DEV-1049; SM-AL-1, NC-AL-1)
+- [ ] 02-03-PLAN.md — Pipecat/LiveKit framework probe + FFmpeg/PyTorch streaming probe (DEV-1050, DEV-1051; NC-AL-2, NC-AL-11)
+- [ ] 02-04-PLAN.md — LLM-on-tokens stretch: Qwen2.5-0.5B + adapter, 20-utterance qualitative eval (DEV-1047; SM-AL-2)
+- [ ] 02-05-PLAN.md — Phase 0 evaluation document, binary go/no-go, STATE/ROADMAP closure (DEV-1052; M1 closure)
+
 ---
 
 ## Phase 3: Phase 1 — Predictive-Delta ASR
