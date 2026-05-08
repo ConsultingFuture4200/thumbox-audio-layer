@@ -46,3 +46,4 @@ select = ["E", "F", "I", "B", "UP"]
 [tool.ruff.lint.per-file-ignores]
 # typer requires typer.Option in argument defaults — B008 false positive.
 "src/spike/cli.py" = ["B008"]
+"src/spike/bench_mimi_decode.py" = ["B008"]

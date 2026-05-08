@@ -1,0 +1,14 @@
+# Mimi decode latency benchmark config.
+#
+# Plan 02-02 Task 1 / DEV-1048 / SM-AL-1 / NC-AL-3.
+# Read by spike/src/spike/bench_mimi_decode.py.
+
+benchmark: mimi-decode
+n_iterations: 1000              # PRD-grade sample count for stable p99
+warmup_iterations: 50           # discarded; covers kernel JIT + cache warm-up
+chunk_size_ms: 80               # NFR-AL-3 chunk granularity (Mimi 12.5 Hz frame rate)
+sample_rate_hz: 24000           # Mimi native rate
+seed: 42
+runtime_profile: cuda           # selects profile from configs/runtime.yaml
+device_synchronize: true        # cuda/rocm sync between timings — required for accuracy
+metric_percentiles: [50, 90, 99]
