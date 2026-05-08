@@ -6,7 +6,7 @@
 
 | # | Phase | Linear | Goal | Window | Gate |
 |---|-------|--------|------|--------|------|
-| 1 | PRD v0.2 & Pre-Phase-0 Resolution | M0 | Resolve PRD §13 open items; promote PRD to v0.2 | now | Naming + NC-AL-9 + NC-AL-12 + NC-AL-6 + corpus path |
+| 1 | PRD v0.2 & Pre-Phase-0 Resolution ✅ | M0 | Resolve PRD §13 open items; promote PRD to v0.2 | **Complete 2026-05-07** | All gates closed; PRD v0.2 Accepted |
 | 2 | Phase 0 — Mimi Feasibility Spike | M1 | Binary go/no-go for Phase 1 | 2 weeks | SM-AL-1 + SM-AL-2 pass; NC-AL-1 within capacity |
 | 3 | Phase 1 — Predictive-Delta ASR | M2 | Ship predictor + delta processor; ≥100ms p90 win on high-confidence calls | 6-10 weeks | SM-AL-3 ≥ 100ms; no regression in NFR-AL-9/10 |
 | 4 | Phase 2 — Audio Codec Layer | M3 | Mimi codec + adapter in production parallel to ASR; ≥200ms p90 win | 3-4 months | SM-AL-5 ≥ 200ms; no regression in NFR-AL-9/10; VRAM ≤ 8GB |
@@ -32,12 +32,14 @@
 
 **Issues:** DEV-1037, DEV-1038, DEV-1039, DEV-1040, DEV-1041, DEV-1042, DEV-1043, DEV-1044
 
+**Status:** ✅ **Complete (2026-05-07)** — all 8 Linear issues closed (DEV-1037 to DEV-1044), PRD v0.2 promoted, all 6 PRD §13 review items resolved. Executed inline (no subagent spawning); decision audit trail at `docs/decisions/`.
+
 **Plans:** 3 plans
 
 Plans:
-- [ ] 01-external-resolution-gates-PLAN.md — Close NC-AL-9 (Mimi licensing), NC-AL-12 (board appetite), NC-AL-6 (audio token storage legal) via decision documents
-- [ ] 02-coordination-and-hygiene-PLAN.md — Finalize naming (DEV-1038), partner corpus path (DEV-1042), receptionBOX Path E reconciliation (DEV-1043); close DEV-1037 informational
-- [ ] 03-prd-v0-2-promotion-PLAN.md — Roll all six decisions into PRD v0.2; update GSD planning files; close DEV-1044
+- [x] 01-external-resolution-gates-PLAN.md — Close NC-AL-9 (Mimi licensing), NC-AL-12 (board appetite), NC-AL-6 (audio token storage legal) via decision documents ✅
+- [x] 02-coordination-and-hygiene-PLAN.md — Finalize naming (DEV-1038), partner corpus path (DEV-1042), receptionBOX Path E reconciliation (DEV-1043); close DEV-1037 informational ✅
+- [x] 03-prd-v0-2-promotion-PLAN.md — Roll all six decisions into PRD v0.2; update GSD planning files; close DEV-1044 ✅
 
 ---
 

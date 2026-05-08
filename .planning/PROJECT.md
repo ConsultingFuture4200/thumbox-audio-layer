@@ -22,7 +22,7 @@ The asymmetry argument: a single-tenant on-prem appliance can do per-firm codec 
 - **First consumer:** receptionBOX (slots in as Path E in the v1.5/v2 latency roadmap)
 - **Hardware target:** T3 (Strix Halo, 128GB unified memory) only. T2 voice support out of scope.
 - **Parent PRD:** `thumbox-technical-prd-v2_1-2026-04-16.md`
-- **Source PRD:** `docs/audiolayer-technical-prd-v0_1-2026-05-07.md` (drafted 2026-05-07, strawman, expecting v0.2)
+- **Source PRD:** `docs/audiolayer-technical-prd-v0_2-2026-05-07.md` (Accepted 2026-05-07; v0.1 strawman preserved as historical baseline at `docs/audiolayer-technical-prd-v0_1-2026-05-07.md`)
 - **Linear project:** [thUMBox Audio Layer](https://linear.app/staqs/project/thumbox-audio-layer-51d112886016/overview) (`a281ae7e-5842-4095-a1c9-2b9e6a265404`)
 
 ## Source-of-Truth Hierarchy
@@ -43,7 +43,17 @@ PRD-numbered phases (Phase 0/1/2/3) are referenced by their PRD names; GSD-numbe
 
 ### Validated
 
-(None yet — Phase 0 spike will validate the architectural feasibility before any FR is provable)
+Phase 1 (M0) coordination outcomes — validated 2026-05-07:
+
+- ✓ Naming finalized as "thUMBox Audio Layer"
+- ✓ DR-AL-3 adopted (Mimi CC-BY-4.0; commercial appliance distribution clear)
+- ✓ NC-AL-9 (Mimi licensing) resolved
+- ✓ NC-AL-12 (board appetite) resolved — green-light, internal headcount, Dustin owner
+- ✓ NC-AL-6 (audio token storage legal) resolved — FR-AL-12 ship-gate clear
+- ✓ Partner corpus Path A — signed agreement landed
+- ✓ Path E framing reconciled with receptionBOX latency-unconventional addendum
+
+Functional and non-functional requirements remain hypotheses until Phase 0 spike validates feasibility.
 
 ### Active
 
@@ -64,7 +74,7 @@ Pulled from PRD §4 (FR-AL) and §5 (NFR-AL). All 17 FRs and 10 NFRs are hypothe
 |----------|-----------|---------|
 | **DR-AL-1** Audio Layer is platform infrastructure, not a pack | Customers don't buy "audio infrastructure"; gating capability behind pack commerce is artificial | Adopted on PRD acceptance |
 | **DR-AL-2** ASR cascade remains in place through all phases; guardrails operate on text | Token-based guardrails are not mature; "you own the data" requires legible audit trail | Adopted on PRD acceptance |
-| **DR-AL-3** Mimi (Kyutai) is the Phase 2 codec target | Strongest published track record (Moshi, 12.5Hz real-time inference, established LLM-input semantics) | Candidate — gated on Phase 0 + license review (NC-AL-9) |
+| **DR-AL-3** Mimi (Kyutai) is the Phase 2 codec target | Strongest published track record (Moshi, 12.5Hz real-time inference, established LLM-input semantics). CC-BY-4.0; counsel cleared commercial appliance distribution. | **Adopted (2026-05-07)** — `docs/decisions/dr-al-3-mimi-licensing.md` |
 | **DR-AL-4** receptionBOX is the first and only Phase 1/2 consumer | Voice packs are obvious consumers; receptionBOX is the only one in roadmap | Adopted on PRD acceptance |
 | **DR-AL-5** Phase 0 is gated on a 2-week timeboxed prototype | Strongest signal on Phase 1 viability is whether basic Mimi pipeline runs at acceptable latency on T3 | Adopted on PRD acceptance |
 | **DR-AL-6** FFmpeg/libavcodec patterns inform timing layer; not used as neural runtime | 25 years of solved PTS/DTS/error-resilience patterns; neural inference happens in ONNX/TensorRT/PyTorch | Adopted on PRD acceptance |
@@ -98,4 +108,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-05-07 after initialization. Linear milestones M0-M4 mirrored as GSD Phases 1-5.*
+*Last updated: 2026-05-07 after Phase 1 (M0) completion and PRD v0.2 promotion. Linear milestones M0-M4 mirrored as GSD Phases 1-5; Phase 1 complete, Phase 2 (Mimi feasibility spike) ready to plan.*
