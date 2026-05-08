@@ -32,6 +32,13 @@
 
 **Issues:** DEV-1037, DEV-1038, DEV-1039, DEV-1040, DEV-1041, DEV-1042, DEV-1043, DEV-1044
 
+**Plans:** 3 plans
+
+Plans:
+- [ ] 01-external-resolution-gates-PLAN.md — Close NC-AL-9 (Mimi licensing), NC-AL-12 (board appetite), NC-AL-6 (audio token storage legal) via decision documents
+- [ ] 02-coordination-and-hygiene-PLAN.md — Finalize naming (DEV-1038), partner corpus path (DEV-1042), receptionBOX Path E reconciliation (DEV-1043); close DEV-1037 informational
+- [ ] 03-prd-v0-2-promotion-PLAN.md — Roll all six decisions into PRD v0.2; update GSD planning files; close DEV-1044
+
 ---
 
 ## Phase 2: Phase 0 — Mimi Feasibility Spike
