@@ -1,0 +1,44 @@
+{
+  "source_file": "mimi-decode-a100.json",
+  "source_gpu": "a100_80gb_pcie",
+  "derate_method": "bandwidth-ratio (RBOX \u00a77.1)",
+  "p50": {
+    "method": "bandwidth",
+    "source_gpu": "a100_80gb_pcie",
+    "source_gb_s": 1555.0,
+    "target_gb_s": 212.0,
+    "ratio": 7.33,
+    "measured_ms": 9.533,
+    "predicted_strix_ms": 69.92,
+    "ci_low_ms": 59.44,
+    "ci_high_ms": 80.41,
+    "ci_pct": 15.0
+  },
+  "p90": {
+    "method": "bandwidth",
+    "source_gpu": "a100_80gb_pcie",
+    "source_gb_s": 1555.0,
+    "target_gb_s": 212.0,
+    "ratio": 7.33,
+    "measured_ms": 10.3455,
+    "predicted_strix_ms": 75.88,
+    "ci_low_ms": 64.5,
+    "ci_high_ms": 87.27,
+    "ci_pct": 15.0
+  },
+  "p99": {
+    "method": "bandwidth",
+    "source_gpu": "a100_80gb_pcie",
+    "source_gb_s": 1555.0,
+    "target_gb_s": 212.0,
+    "ratio": 7.33,
+    "measured_ms": 10.9592,
+    "predicted_strix_ms": 80.38,
+    "ci_low_ms": 68.33,
+    "ci_high_ms": 92.44,
+    "ci_pct": 15.0
+  },
+  "kill_threshold_ms": 100,
+  "pass_p90": true,
+  "pass_p90_ci_high": true
+}

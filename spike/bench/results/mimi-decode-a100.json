@@ -1,0 +1,26 @@
+{
+  "p50_ms": 9.533,
+  "p90_ms": 10.3455,
+  "p99_ms": 10.9592,
+  "n_samples": 1000,
+  "warmup_iterations": 50,
+  "chunk_size_ms": 80,
+  "sample_rate_hz": 24000,
+  "chunk_codes_shape": [
+    1,
+    32,
+    1
+  ],
+  "runtime": "cuda",
+  "device": "cuda:0",
+  "dtype": "torch.float16",
+  "mimi_revision": "89091b3e466eb6a9d11e537bf26b144f194978f7",
+  "image_digest": "unknown",
+  "gpu_sku": "NVIDIA A100 80GB PCIe",
+  "rocm_version": null,
+  "cuda_version": "12.4",
+  "torch_version": "2.5.1+cu124",
+  "python_version": "3.11.10",
+  "seed": 42,
+  "timestamp_utc": "2026-05-08T20:21:46+00:00"
+}
